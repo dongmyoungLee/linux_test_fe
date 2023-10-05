@@ -23,6 +23,7 @@ const Form = () => {
     }).then((res) => {
       if (res.status == 200) {
         alert("전송성공");
+        window.location.reload()
       }
     }).catch((err) => {
       console.log(err);
