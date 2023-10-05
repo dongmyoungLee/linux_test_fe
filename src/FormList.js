@@ -19,11 +19,11 @@ const FormList = () => {
     <div className="form-list">
       <h2>Form List</h2>
       <ul>
-        {demos.map(demo => (
+        {demos.length != 0 ? demos.map(demo => (
           <li key={demo.id}>
             <strong>{demo.name}</strong>: {demo.description}
           </li>
-        ))}
+        )) : <p>데이터 없음</p>}
       </ul>
     </div>
   );
