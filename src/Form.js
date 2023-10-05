@@ -1,7 +1,7 @@
 import {useState} from "react";
 import axios from "axios";
 
-const Form = () => {
+const Form = (props) => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -23,7 +23,8 @@ const Form = () => {
     }).then((res) => {
       if (res.status == 200) {
         alert("전송성공");
-        window.location.reload()
+        props.setObserver();
+        // window.location.reload();
       }
     }).catch((err) => {
       console.log(err);

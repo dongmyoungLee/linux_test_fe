@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const FormList = () => {
+const FormList = (props) => {
   const [demos, setDemos] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const FormList = () => {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [props.observer]);
 
   return (
     <div className="form-list">
@@ -23,7 +23,7 @@ const FormList = () => {
           <li key={demo.id}>
             <strong>{demo.name}</strong>: {demo.description}
           </li>
-        )) : <p>데이터 없음</p>}
+        )) : <p>로딩중 이거나 데이터 아직 없음</p>}
       </ul>
     </div>
   );
