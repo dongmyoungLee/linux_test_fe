@@ -4,6 +4,7 @@ import axios from "axios";
 const Form = (props) => {
   const [load, setLoad] = useState(false);
 
+
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -19,7 +20,7 @@ const Form = (props) => {
 
     console.log('Submitted Data:', formData);
 
-    axios.post('http://localhost:8001/api/v1/demo', {
+    axios.post(process.env.NODE_ENV === 'development' ? 'http://localhost:8001/api/v1/demo' : 'http://10.128.0.5:8001/api/v1/demo', {
       name : formData.name,
       description : formData.description
     }).then((res) => {
@@ -48,7 +49,9 @@ const Form = (props) => {
           onChange={handleInputChange}
         />
         <label htmlFor="description">설명:</label>
-        <textarea
+        <input
+
+
           id="description"
           name="description"
           value={formData.description}

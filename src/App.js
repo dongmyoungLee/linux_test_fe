@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Form from "./Form";
 import FormList from "./FormList";
@@ -15,6 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>React Form</h1>
+        <h2>{process.env.NODE_ENV}</h2>
         <Form setObserver={setObserverFunc} />
         <FormList observer={observer} />
       </header>
