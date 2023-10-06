@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.NODE_ENV !== 'development' && 'http://localhost:8001';
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' && 'http://localhost:8001';
 
 const FormList = (props) => {
   const [demos, setDemos] = useState([]);
