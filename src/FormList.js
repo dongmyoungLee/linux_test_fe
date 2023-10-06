@@ -7,7 +7,7 @@ const FormList = (props) => {
 
 
   useEffect(() => {
-    axios.get(process.env.NODE_ENV === 'development' ? 'http://localhost:8001/api/v1/demo' : 'http://10.128.0.5:8001/api/v1/demo')
+    axios.get(process.env.NODE_ENV === 'development' ? 'http://localhost:8001/api/v1/demo' : 'http://10.128.0.4:8001/api/v1/demo')
       .then(response => {
         setDemos(response.data);
       })
