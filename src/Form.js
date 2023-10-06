@@ -1,6 +1,8 @@
 import {useState} from "react";
 import axios from "axios";
 
+axios.defaults.baseURL = process.env.NODE_ENV === 'development' && 'http://localhost:8001';
+
 const Form = (props) => {
   const [load, setLoad] = useState(false);
 
@@ -20,7 +22,7 @@ const Form = (props) => {
 
     console.log('Submitted Data:', formData);
 
-    axios.post(process.env.NODE_ENV === 'development' ? 'http://localhost:8001/api/v1/demo' : 'http://localhost:3000', {
+    axios.post('/api/v1/demo', {
       name : formData.name,
       description : formData.description
     }).then((res) => {
