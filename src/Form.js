@@ -20,7 +20,7 @@ const Form = (props) => {
 
     console.log('Submitted Data:', formData);
 
-    axios.post(process.env.NODE_ENV === 'development' ? 'http://localhost:8001/api/v1/demo' : 'http://10.128.0.4:8001/api/v1/demo', {
+    axios.post(process.env.NODE_ENV === 'development' ? 'http://localhost:8001/api/v1/demo' : 'http://34.70.155.214:8001/api/v1/demo', {
       name : formData.name,
       description : formData.description
     }).then((res) => {
