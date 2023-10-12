@@ -26,7 +26,7 @@ const FormList = (props) => {
           <li key={demo.id}>
             <strong>{demo.name}</strong>: {demo.description}
           </li>
-        )) : <p>로딩중이거나 데이터 없음</p>}
+        )) : <p>데이터 없음</p>}
       </ul>
 
     </div>
