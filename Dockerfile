@@ -2,7 +2,7 @@
 FROM nginx
 FROM node:18.18.1-slim
 RUN ["rm", "-rf", "usr/share/nginx/app/*"]
-RUN ["npm", "run", "build"]
+RUN ["npm", "build"]
 COPY ./build/* /usr/share/nginx/app/
 COPY ./default.conf /etc/nginx/conf.d/p.conf
 EXPOSE 3000
