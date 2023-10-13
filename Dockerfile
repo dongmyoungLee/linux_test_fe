@@ -2,14 +2,11 @@
 FROM nginx
 FROM node:18.18.1-slim
 RUN ["rm", "-rf", "usr/share/nginx/app/*"]
-RUN ["npm", "-v"]
+RUN ["npm", "install"]
 RUN ["npm", "build"]
 COPY ./build/* /usr/share/nginx/app/
 COPY ./default.conf /etc/nginx/conf.d/p.conf
 EXPOSE 3000
-
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
 
 #FROM node:18.18.1-slim
 #RUN ["mkdir", "app"]
